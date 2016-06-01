@@ -188,21 +188,21 @@ public class CircleSeekBar extends View{
         }
     }
 
-//    @Override
-//    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-//        int height = getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec);
-//        int width = getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec);
-//        int min = Math.min(width, height);
-//        setMeasuredDimension(min, min);
-//
-//        mInitWheelX = min / 2;
-//        mInitWheelY = getPaddingTop() + mUnreachedWidth / 2;
-//        mCurAngle = (double) mCurProcess / mMaxProcess * 360.0;
-//        double cos = -Math.cos(Math.toRadians(mCurAngle));
-//        float radius = (getWidth() - getPaddingLeft() - getPaddingRight() - mUnreachedWidth) / 2;
-//        mWheelCurX = calcXLocationInWheel(mCurAngle > 180 ? 0 : min, (float) cos, radius);
-//        mWheelCurY = calcYLocationInWheel((float) cos, radius);
-//    }
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int height = getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec);
+        int width = getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec);
+        int min = Math.min(width, height);
+        setMeasuredDimension(min, min);
+
+        mInitWheelX = min / 2;
+        mInitWheelY = getPaddingTop() + mUnreachedWidth / 2;
+        mCurAngle = (double) mCurProcess / mMaxProcess * 360.0;
+        double cos = -Math.cos(Math.toRadians(mCurAngle));
+        float radius = (getWidth() - getPaddingLeft() - getPaddingRight() - mUnreachedWidth) / 2;
+        mWheelCurX = calcXLocationInWheel(mCurAngle > 180 ? 0 : min, (float) cos, radius);
+        mWheelCurY = calcYLocationInWheel((float) cos, radius);
+    }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {

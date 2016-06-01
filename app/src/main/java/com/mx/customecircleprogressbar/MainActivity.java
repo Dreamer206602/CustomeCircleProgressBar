@@ -35,7 +35,13 @@ public class MainActivity extends AppCompatActivity {
                         }).show();
             }
         });
+
+
+        mCircleSeekBar= (CircleSeekBar) findViewById(R.id.circleSeekBar);
+        mCircleSeekBar.setCurProcess(29);
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
